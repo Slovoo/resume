@@ -1,0 +1,365 @@
+@font-face {
+  font-family: 'Basis Grotesque Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Basis Grotesque Pro'),
+    url('/fonts/basis-grotesque-pro-cufonfonts-webfont/BasisGrotesquePro-Regular.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'Basis Grotesque Pro Bold';
+  font-style: bold;
+  font-weight: bold;
+  src: local('Basis Grotesque Pro Bold'),
+    url('/fonts/basis-grotesque-pro-cufonfonts-webfont/BasisGrotesquePro-Bold.woff')
+      format('woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  font-family: 'Basis Grotesque Pro', sans-serif;
+}
+
+.container {
+  align-items: center;
+  max-width: 124rem;
+}
+
+section {
+  display: flex;
+}
+
+.first {
+  margin-top: 7rem;
+}
+
+.box {
+  flex: 50%;
+  float: left;
+  width: 50%;
+}
+
+.box ul li {
+  margin-right: 6rem;
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-img {
+  width: 43rem;
+  height: 54rem;
+}
+
+footer img {
+  position: relative;
+  left: 85rem;
+  bottom: 3rem;
+  width: 38.8rem;
+  height: 19.4rem;
+  margin-bottom: 3rem;;
+}
+
+h1 {
+  font-size: 12.5rem;
+  line-height: 16.1rem;
+  letter-spacing: 0.01em;
+  text-align: left;
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: -1rem;
+}
+
+h2 {
+  font-family: 'Basis Grotesque Pro Bold';
+  font-size: 4rem;
+  font-style: bold;
+  font-weight: bold;
+  line-height: 5.2rem;
+  text-align: left;
+}
+
+h3 {
+  font-size: 4rem;
+  font-weight: normal;
+  line-height: 5.2rem;
+  letter-spacing: 0.01em;
+  text-align: left;
+  font-style: normal;
+}
+
+#career-summary {
+  margin-top: 8rem;
+}
+
+p {
+  font-size: 2.3rem;
+  line-height: 3rem;
+  text-align: left;
+  font-style: normal;
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-size: 2.3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3rem;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+#career li {
+  padding-bottom: 5rem;
+}
+
+#achievements li,
+#skills li {
+  padding-bottom: 3rem;
+}
+
+#education li {
+  padding-bottom: 5.5rem;
+}
+
+#education {
+  margin-top: 0;
+}
+
+#contacts li {
+  font-size: 3rem;
+  font-style: normal;
+  line-height: 3.9rem;
+  letter-spacing: 0.01em;
+  padding-bottom: 2.1rem;
+}
+
+.vector {
+  display: flex;
+}
+
+.vector2 {
+  margin-bottom: 5rem;
+  margin-left: 9.4rem;
+  width: 25.4rem;
+   height: 4.5rem;
+}
+
+.vector6 {
+  position: relative;
+  width: 8.8rem;
+  height: 6.4rem;
+  top: 5rem;
+  right: 1rem;
+  overflow: visible;
+}
+
+.vector7 {
+  position: relative;
+  width: 6.5rem;
+  height: 3.7rem;
+  top: 5rem;
+  left: 5.3rem;
+  overflow: visible;
+}
+
+a {
+  color: inherit;
+  position: relative;
+  transition: color 275ms ease;
+}
+
+a:hover {
+  color: rgb(97, 96, 96);
+  transition: color 0.1s;
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    max-width: 90rem;
+  }
+
+  h1 {
+    font-size: 10rem;
+  }
+
+  h2 {
+    font-size: 3.6rem;
+  }
+
+  h3 {
+    font-size: 3.6rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  li {
+    font-size: 1.8rem;
+  }
+
+  #career li {
+    padding-bottom: 1.8rem;
+  }
+
+  #education li {
+    padding-bottom: 3rem;
+  }
+
+  .box ul li {
+    margin-right: 3rem;
+  }
+
+  .resume-img {
+    width: 80%;
+    height: auto;
+  }
+
+  footer img {
+    width: 32rem;
+    height: auto;
+    left: 55rem;
+  }
+
+  #contacts li {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .container {
+    max-width: 70rem;
+  }
+
+  section {
+    flex-direction: column;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  .resume-img {
+    width: 55%;
+    height: auto;
+  }
+
+  footer {
+    display: flex;
+    justify-content: end;
+  }
+
+  footer img {
+    position: static; 
+    width: 15rem;
+    height: auto;
+  }
+
+  #career li,
+  #achievements li,
+  #skills li,
+  #education li,
+  #contacts li {
+    padding-bottom: 2.5rem;
+    font-size: 1.8rem;
+  }
+
+  #career-summary {
+    margin-top: 2rem;
+  }
+
+  .vector2 {
+    align-content: center;
+    margin-bottom: 2rem;
+    margin-left: 0;
+  }
+
+  .vector6 {
+    width: 6rem;
+    height: auto;
+    top: 1rem;
+  }
+
+  .vector7 {
+    width: 4rem;
+    height: auto;
+    top: 0rem;
+    left: 3.3rem;
+  }
+
+  #contacts li a {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 50rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 30rem;
+  }
+
+  .vector2 {
+    width: 22rem;
+    height: auto;
+  }
+
+  .resume-img {
+    width: 80%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  .first {
+    margin-top: 0;
+  }
+}
