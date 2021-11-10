@@ -140,6 +140,11 @@ li {
   margin-top: 8.5px;
 }
 
+ul#education {
+  margin-top: -0.4rem
+;
+}
+
 #contacts li {
   font-size: 3rem;
   font-style: normal;
@@ -317,6 +322,11 @@ a:hover {
   ul,
   #career {
     height: auto;
+  }
+
+  ul#education {
+    margin-top: 1rem
+  ;
   }
 
   li {
