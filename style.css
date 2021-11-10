@@ -26,35 +26,34 @@ html {
 
 body {
   color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
   margin: 0 auto;
   font-family: 'Basis Grotesque Pro', sans-serif;
+  height: 100vh;
 }
 
 .container {
-  align-items: center;
-  max-width: 124rem;
+  display: grid;
+  grid-template-columns: 60rem 60rem;
+  grid-template-rows: auto 75rem 45rem 45rem 30rem;
+  grid-template-areas:
+    'main main'
+    'main main'
+    'main main'
+    'main main'
+    'footer footer';
+  justify-content: center;
+  margin-top: 4rem;
 }
 
-section {
+header {
   display: flex;
 }
 
-.first {
-  margin-top: 7rem;
-}
-
 .box {
-  flex: 50%;
-  float: left;
-  width: 50%;
-}
-
-.box ul li {
-  margin-right: 6rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
 }
 
 .images {
@@ -67,13 +66,9 @@ section {
   height: 54rem;
 }
 
-footer img {
-  position: relative;
-  left: 85rem;
-  bottom: 3rem;
-  width: 38.8rem;
-  height: 19.4rem;
-  margin-bottom: 3rem;;
+footer {
+  grid-area: footer;
+  align-content: flex-end;
 }
 
 h1 {
@@ -103,6 +98,7 @@ h3 {
   letter-spacing: 0.01em;
   text-align: left;
   font-style: normal;
+  margin-bottom: 1rem;
 }
 
 #career-summary {
@@ -118,8 +114,17 @@ p {
 }
 
 ul {
+  display: flex;
+  height: 30rem;
+  flex-direction: column;
   list-style-type: none;
   padding: 0;
+  justify-content: space-around;
+}
+
+#career {
+  height: 60rem;
+  margin-top: 0;
 }
 
 li {
@@ -131,21 +136,8 @@ li {
   text-align: left;
 }
 
-#career li {
-  padding-bottom: 5rem;
-}
-
-#achievements li,
-#skills li {
-  padding-bottom: 3rem;
-}
-
-#education li {
-  padding-bottom: 5.5rem;
-}
-
-#education {
-  margin-top: 0;
+#career-summary {
+  margin-top: 8.5px;
 }
 
 #contacts li {
@@ -164,7 +156,7 @@ li {
   margin-bottom: 5rem;
   margin-left: 9.4rem;
   width: 25.4rem;
-   height: 4.5rem;
+  height: 4.5rem;
 }
 
 .vector6 {
@@ -198,11 +190,12 @@ a:hover {
 
 @media screen and (max-width: 1440px) {
   .container {
-    max-width: 90rem;
+    grid-template-columns: 48rem 48rem;
   }
 
   h1 {
     font-size: 10rem;
+    text-align: center;
   }
 
   h2 {
@@ -211,6 +204,7 @@ a:hover {
 
   h3 {
     font-size: 3.6rem;
+    margin-top: 2rem;
   }
 
   p {
@@ -219,47 +213,51 @@ a:hover {
 
   li {
     font-size: 1.8rem;
-  }
-
-  #career li {
-    padding-bottom: 1.8rem;
-  }
-
-  #education li {
-    padding-bottom: 3rem;
-  }
-
-  .box ul li {
-    margin-right: 3rem;
-  }
-
-  .resume-img {
-    width: 80%;
-    height: auto;
+    line-height: 2.5rem;
   }
 
   footer img {
     width: 32rem;
     height: auto;
-    left: 55rem;
   }
 
   #contacts li {
     font-size: 1.8rem;
   }
+
+  .vector6 {
+    top: 3rem;
+  }
+
+  .vector2 {
+    margin-left: 14rem;
+  }
+
+  .vector7 {
+    top: 2rem;
+  }
 }
 
 @media screen and (max-width: 1023px) {
   .container {
-    max-width: 70rem;
+    grid-template-columns: minmax(300px, 700px);
+    grid-template-rows: auto auto auto auto auto auto auto auto 20rem;
+    grid-template-areas:
+      'main'
+      'main'
+      'main'
+      'main'
+      'main'
+      'main'
+      'main'
+      'main'
+      'footer'
+      'footer';
+    margin: 2rem 3rem 0 3rem;
   }
 
-  section {
-    flex-direction: column;
-  }
-
-  .box {
-    width: 100%;
+  .intro {
+    flex-wrap: nowrap;
   }
 
   .resume-img {
@@ -267,34 +265,10 @@ a:hover {
     height: auto;
   }
 
-  footer {
-    display: flex;
-    justify-content: end;
-  }
-
-  footer img {
-    position: static; 
-    width: 15rem;
-    height: auto;
-  }
-
-  #career li,
-  #achievements li,
-  #skills li,
-  #education li,
-  #contacts li {
-    padding-bottom: 2.5rem;
-    font-size: 1.8rem;
-  }
-
-  #career-summary {
-    margin-top: 2rem;
-  }
-
   .vector2 {
     align-content: center;
     margin-bottom: 2rem;
-    margin-left: 0;
+    margin-left: 2rem;
   }
 
   .vector6 {
@@ -309,57 +283,121 @@ a:hover {
     top: 0rem;
     left: 3.3rem;
   }
+  footer {
+    align-items: center;
+  }
 
-  #contacts li a {
-    font-size: 1.8rem;
+  footer img {
+    width: 28rem;
+    height: auto;
   }
 
   h3 {
-    font-size: 2.5rem;
+    font-size: 3.6rem;
   }
 
   h2 {
-    font-size: 2.5rem;
-    margin-top: 0;
+    font-size: 3.5rem;
+    font-family: 'Basis Grotesque Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    margin-left: -2px;
+  }
+
+  h1 {
+    line-height: 10rem;
+    text-align: left;
   }
 
   p {
     font-size: 1.6rem;
   }
 
-  section {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: 50rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .container {
-    max-width: 30rem;
-  }
-
-  .vector2 {
-    width: 22rem;
+  ul,
+  #career {
     height: auto;
+  }
+
+  li {
+    padding-bottom: 2rem;
+  }
+
+  #contacts li {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    margin: 0 2rem;
+  }
+
+  br {
+    display: none;
+  }
+
+  .box {
+    margin: 0;
   }
 
   .resume-img {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
 
-  h1 {
-    font-size: 6rem;
+  .images {
+    align-items: center;
   }
 
-  .first {
+  .resume {
+    height: 8rem;
+  }
+
+  .resume2 {
+    height: 5rem;
+  }
+
+  .vector2 {
+    width: 23.6rem;
+    height: auto;
+    margin-bottom: 1.7rem;
+  }
+
+  h1 {
+    font-size: 8rem;
+    margin-left: -8px;
+  }
+
+  h3 {
+    font-size: 3.2rem;
+    margin: 1rem 0;
+    line-height: 4.3rem;
+  }
+
+  p {
+    font-size: 2rem;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
     margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  li {
+    font-size: 2rem;
+    line-height: 2.58rem;
+  }
+
+  #contacts li a {
+    text-decoration: none;
+  }
+
+  #education {
+    margin-bottom: 2rem;
+  }
+
+  .vector6 {
+    top: 0;
   }
 }
